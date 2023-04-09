@@ -91,13 +91,21 @@ const objLat = (obj) => {
 const cvFormatter = (arr) => {
     // write your code here
     var reFormat = {};
-    var arrOfObj =[];
+    
     for (let i=0; i<cvs.length; i++){
     if (cvs[i].yearsOfExperience > 1){
-        arrOfObj.push(reFormat["fullName"] = cvs[i].firstName+ " " +cvs[i].lastName)
-        arrOfObj.push(reFormat["tech"] = cvs[i].tech)
+        if(cvs[i].firstName === null) {
+            delete cvs[i].firstName
+            reFormat["fullName"] = cvs[i].lastName
+        }
+        if(cvs[i].lastName === null) {
+            delete cvs[i].lastName
+            reFormat["fullName"] = cvs[i].firstName  
+        } else reFormat["fullName"] = cvs[i].firstName+ " " +cvs[i].lastName
+        
+        reFormat["tech"] = cvs[i].tech
        
-    }}return arrOfObj
+    }}return reFormat
 };
 
 let cvs = [
