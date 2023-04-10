@@ -90,52 +90,47 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
-    var reFormat = {};
+    let array = [];
+        for (let i = 0; i < arr.length; i++) {
+                 const e = arr[i];
+            if (e.lastName === null && e.yearsOfExperience > 1) {
+                array.push({ fullName: `${e.firstName}`, tech: `${e.tech}` });
     
-    for (let i=0; i<cvs.length; i++){
-    if (cvs[i].yearsOfExperience > 1){
-        if(cvs[i].firstName === null) {
-            delete cvs[i].firstName
-            reFormat["fullName"] = cvs[i].lastName
-        }
-        if(cvs[i].lastName === null) {
-            delete cvs[i].lastName
-            reFormat["fullName"] = cvs[i].firstName  
-        } else reFormat["fullName"] = cvs[i].firstName+ " " +cvs[i].lastName
-        
-        reFormat["tech"] = cvs[i].tech
-       
-    }}return reFormat
+            } else if (e.yearsOfExperience > 1) {
+                array.push({ fullName: `${e.firstName} ${e.lastName}`, tech: `${e.tech}` });
+            } else continue; 
+        } return array;
+    
 };
 
-let cvs = [
-    {
-        firstName: "Jason",
-        lastName: "James",
-        yearsOfExperience: 20,
-        tech: "JS"
-    },
-    {
-        firstName: "Shira",
-        lastName: null,
-        yearsOfExperience: 5,
-        tech: ".Net"
-    },
-    {
-        firstName: "Dmitri",
-        lastName: "Akkerman",
-        yearsOfExperience: 1,
-        tech: "Python"
-    },
-    {
-        firstName: "Isabella",
-        lastName: null,
-        yearsOfExperience: 7,
-        tech: "Java"
-    }
-]
+// let cvs = [
+//     {
+//         firstName: "Jason",
+//         lastName: "James",
+//         yearsOfExperience: 20,
+//         tech: "JS"
+//     },
+//     {
+//         firstName: "Shira",
+//         lastName: null,
+//         yearsOfExperience: 5,
+//         tech: ".Net"
+//     },
+//     {
+//         firstName: "Dmitri",
+//         lastName: "Akkerman",
+//         yearsOfExperience: 1,
+//         tech: "Python"
+//     },
+//     {
+//         firstName: "Isabella",
+//         lastName: null,
+//         yearsOfExperience: 7,
+//         tech: "Java"
+//     }
+// ]
 
-console.log(cvFormatter(cvs))
+// console.log(cvFormatter(cvs))
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
