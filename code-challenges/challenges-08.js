@@ -41,7 +41,7 @@ for (const val in obj) {
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 02
-// optional:
+//   Required:
 //
 // Write a function that takes recipe info object and returns an array of recipe info as strings
 // as in the example
@@ -62,6 +62,10 @@ for (const val in obj) {
 
 const getEntries = (obj) => {
   // write your code here
+  let array =[];
+  for (const [key, value] of Object.entries(obj)) {
+    array.push(`${key}: ${value}`);
+  }return array
 };
 // -------------------------------------------------------------------------------------------------------
 
