@@ -127,6 +127,16 @@ function fullName(arr) {
 
 function gradesAvg(arr) {
     // write your code here
+    let sum = 0;
+    arr = arr.map((ele, i) => {
+      sum = 0;
+      ele.gradsList.forEach((element) => {
+        sum = sum + element;
+      });
+      ele.avg = sum / ele.gradsList.length;
+      return ele;
+    });
+    return arr;
 }
 // -------------------------------------------------------------------------------------------------------
 
