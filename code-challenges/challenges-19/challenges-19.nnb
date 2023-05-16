@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n  // Write your code here\n  let sArray = s.split(\"\");\n  let tArray = t.split(\"\");\n  let count = 0;\n  for (let i = 0; i === count && i < s.length; i++) {\n    if (sArray[i] === tArray[i]) {\n      count++;\n    }\n  }\n\n  let t_Count = t.length - count;\n  let s_Count = s.length - count;\n\n  let STK = k - (t_Count + s_Count);\n\n  if (t_Count + s_Count < k && t.length + s.length > k && STK % 2 !== 0) {\n    return \"No\";\n  } else if (t_Count + s_Count <= k) {\n    return \"Yes\";\n  } else {\n    return \"No\";\n  }\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function encryption(s) {\n  // Write your code here\n  const ceil = Math.ceil(Math.sqrt(s.length));\n\n  let array = [];\n  let extractsChar = s;\n\n  while (extractsChar) {\n    array = array.concat(extractsChar.substring(0, ceil));\n    extractsChar = extractsChar.substring(ceil);\n  }\n  let result = [];\n  for (let i = 0; i < ceil; i++) {\n    result = result.concat(\n      array.reduce((r, v) => {\n        return r + (v[i] || \"\");\n      }, \"\")\n    );\n  }\n  return result.join(\" \");\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
